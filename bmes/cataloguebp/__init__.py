@@ -1,0 +1,1 @@
+from bmes.cataloguebp import views, models, catalogue_service
