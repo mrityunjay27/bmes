@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="213e62d7-3d59-468d-9367-d1d8e1e489b6" name="Changes" comment="* css work">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmes/bmeswebapp.db" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/bmeswebapp.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmes/cataloguebp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/cataloguebp/models.py" afterDir="false" />
+    <list default="true" id="213e62d7-3d59-468d-9367-d1d8e1e489b6" name="Changes" comment="Version correction and admin not working because of prev version of wtf and sqlalchemy">
+      <change afterPath="$PROJECT_DIR$/bmes/cartbp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bmes/cartbp/cart_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bmes/cartbp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bmes/cartbp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740821777507</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Version correction and admin not working because of prev version of wtf and sqlalchemy">
+      <option name="closed" value="true" />
+      <created>1740852388776</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740852388776</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +184,7 @@
     <MESSAGE value="* Implemented catalogue view and service." />
     <MESSAGE value="* HTML work for catalog bp" />
     <MESSAGE value="* css work" />
-    <option name="LAST_COMMIT_MESSAGE" value="* css work" />
+    <MESSAGE value="Version correction and admin not working because of prev version of wtf and sqlalchemy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version correction and admin not working because of prev version of wtf and sqlalchemy" />
   </component>
 </project>
