@@ -2,7 +2,9 @@ from bmes.sharedbp import db
 from sqlalchemy.types import Enum
 from datetime import datetime
 import enum
-
+from flask_admin.contrib.sqla import ModelView
+from wtforms_sqlalchemy.fields import QuerySelectMultipleField
+from wtforms import SelectMultipleField
 
 # Status
 class StatusType(enum.Enum):
@@ -87,3 +89,28 @@ class Product(Base):
 
     def __repr__(self):
         return self.name
+
+class ProductAdmin(ModelView):
+    form_columns = ['name', 'slug', 'description', 'price', 'old_price', 'sku', 'model',
+                    'image_url', 'is_bestseller', 'is_featured', 'quantity', 'categories', 'brands', 'product_status']
+
+    # Use QuerySelectMultipleField for relationships
+    form_extra_fields = {
+        'categories': QuerySelectMultipleField(
+            'Categories',
+            query_factory=lambda: Category.query.all(),
+            get_label='name',
+            allow_blank=True
+        ),
+        'brands': QuerySelectMultipleField(
+            'Brands',
+            query_factory=lambda: Brand.query.all(),
+            get_label='name',
+            allow_blank=True
+        )
+    }
+
+    def on_model_change(self, form, model, is_created):
+        """Ensure many-to-many relationships are correctly saved."""
+        model.categories = form.categories.data
+        model.brands = form.brands.data
