@@ -11,7 +11,7 @@ def catalogue_view(category_slug='all-categories', brand_slug='all-brands'):
      if request.method == 'POST': # Adding item to the cart
 
          #Fetching products from the catalogue service
-         page_object = catalogue_service.fetch_products(request, category_slug, brand_slug)
+         page_object = catalogue_service.fetch_products_V2(request, category_slug, brand_slug)
 
          return render_template(
            'catalogue.html',
@@ -22,7 +22,7 @@ def catalogue_view(category_slug='all-categories', brand_slug='all-brands'):
            selected_brand=brand_slug,
          )
      else: # Get list of all the product.
-         page_object = catalogue_service.fetch_products(request, category_slug, brand_slug)
+         page_object = catalogue_service.fetch_products_V2(request, category_slug, brand_slug)
 
          return render_template(
            'catalogue.html',

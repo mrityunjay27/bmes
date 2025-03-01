@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="213e62d7-3d59-468d-9367-d1d8e1e489b6" name="Changes" comment="* Implemented catalogue view and service.">
+    <list default="true" id="213e62d7-3d59-468d-9367-d1d8e1e489b6" name="Changes" comment="* HTML work for catalog bp">
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/cataloguebp.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/partials/brand.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/partials/catalogue.scss" afterDir="false" />
@@ -12,12 +12,6 @@
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/partials/pagination.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/partials/product_list.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/static/content/scss/partials/product_list_item.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/catalogue.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/partials/brand.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/partials/category.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/partials/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/partials/product_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/cataloguebp/templates/cataloguebp/partials/product_list_item.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/static/content/bmes.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/static/content/bmes.css.map" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/static/content/bootstrap.css" afterDir="false" />
@@ -109,9 +103,12 @@
       <change afterPath="$PROJECT_DIR$/bmes/static/scripts/modernizr-2.6.2.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/static/scripts/respond.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bmes/static/scripts/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmes/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bmes/cataloguebp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/cataloguebp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmes/cataloguebp/catalogue_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/cataloguebp/catalogue_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmes/cataloguebp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/cataloguebp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmes/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bmes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bmes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/runserver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +142,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Python.runserver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
   }
@@ -154,6 +152,35 @@
       <recent name="D:\My Workspace\BMES\bmes\cataloguebp" />
       <recent name="D:\My Workspace\BMES\bmes" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BMES" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/runserver.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.runserver" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -211,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740245450776</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="* HTML work for catalog bp">
+      <option name="closed" value="true" />
+      <created>1740819028381</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740819028381</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +266,7 @@
     <MESSAGE value="* Created cataloguebp folder srtucture and registered in main init file" />
     <MESSAGE value="* Created product models * Registered to Admin module * Created and executed migration&#10;* Downgraded wtf forms as it was not able to handle enum properly" />
     <MESSAGE value="* Implemented catalogue view and service." />
-    <option name="LAST_COMMIT_MESSAGE" value="* Implemented catalogue view and service." />
+    <MESSAGE value="* HTML work for catalog bp" />
+    <option name="LAST_COMMIT_MESSAGE" value="* HTML work for catalog bp" />
   </component>
 </project>

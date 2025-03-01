@@ -62,4 +62,4 @@ def fetch_products_V2(request, category_slug, brand_slug):
     If page = 3, it retrieves products 19-27 (LIMIT 9 OFFSET 18).
     """
 
-    return query.paginate(page, 9, False)
+    return query.paginate(page=page, per_page=9, error_out=False)
