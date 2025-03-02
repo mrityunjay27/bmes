@@ -1,4 +1,6 @@
 from flask import Flask, request, session
+
+from bmes.cartbp import cart_service
 from bmes.sharedbp import db
 import os
 from flask_migrate import Migrate
@@ -38,4 +40,8 @@ def inject_context():
     Contains object that is available to whole application
     :return:
     """
-    return {}
+    return {
+              'cart_item_count': cart_service.cart_items_count(request,session),
+              'cart_total': cart_service.get_cart_total(request, session),
+              'cart_items': cart_service.get_cart_items(request,session),
+           }
