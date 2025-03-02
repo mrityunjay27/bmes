@@ -1,6 +1,7 @@
 from flask import  Blueprint, request, session, render_template, url_for, redirect
 from datetime import datetime
 from bmes.cataloguebp import catalogue_service
+from bmes.cartbp import cart_service
 
 catalogue = Blueprint('catalogue', __name__, template_folder='templates/cataloguebp')
 
@@ -10,6 +11,8 @@ def catalogue_view(category_slug='all-categories', brand_slug='all-brands'):
 
      if request.method == 'POST': # Adding item to the cart
 
+        # Adding item to the car.
+         cart_service.add_to_cart(request, session)
          #Fetching products from the catalogue service
          page_object = catalogue_service.fetch_products_V2(request, category_slug, brand_slug)
 
