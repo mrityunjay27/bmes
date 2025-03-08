@@ -13,6 +13,8 @@ from bmes.cataloguebp.views import catalogue
 from bmes.cartbp.views import cart
 from bmes.locationbp.views import location
 from bmes.userbp.views import user
+from bmes.orderbp.views import order
+from bmes.checkoutbp.views import checkout
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,6 +28,8 @@ app.register_blueprint(catalogue)
 app.register_blueprint(cart)
 app.register_blueprint(location)
 app.register_blueprint(user)
+app.register_blueprint(order)
+app.register_blueprint(checkout)
 
 
 #Database Configuration
