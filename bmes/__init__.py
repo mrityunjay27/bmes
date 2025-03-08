@@ -9,14 +9,19 @@ from flask_admin.contrib.sqla import ModelView
 from bmes.cataloguebp.models import Brand, Category, Product, ProductAdmin
 from bmes.cataloguebp.views import catalogue
 from bmes.cartbp.views import cart
+from bmes.locationbp.views import location
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
+
+# App Secret key
 app.config["SECRET_KEY"] = "secret-key"
 
+# Blueprint registration
 app.register_blueprint(catalogue)
 app.register_blueprint(cart)
+app.register_blueprint(location)
 
 #Database Configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bmeswebapp.db')
