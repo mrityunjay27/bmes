@@ -7,9 +7,12 @@ from flask_migrate import Migrate
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from bmes.cataloguebp.models import Brand, Category, Product, ProductAdmin
+from bmes.userbp.models import Customer, Person, PersonAdmin, CustomerAdmin, AddressAdmin
+from bmes.locationbp.models import Address
 from bmes.cataloguebp.views import catalogue
 from bmes.cartbp.views import cart
 from bmes.locationbp.views import location
+from bmes.userbp.views import user
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,6 +25,8 @@ app.config["SECRET_KEY"] = "secret-key"
 app.register_blueprint(catalogue)
 app.register_blueprint(cart)
 app.register_blueprint(location)
+app.register_blueprint(user)
+
 
 #Database Configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'bmeswebapp.db')
@@ -33,6 +38,13 @@ admin = Admin(app)
 admin.add_view(ProductAdmin(Product, db.session))
 admin.add_view(ModelView(Category, db.session))
 admin.add_view(ModelView(Brand, db.session))
+# admin.add_view(ModelView(Address, db.session))
+# admin.add_view(ModelView(Customer, db.session))
+# admin.add_view(ModelView(Person, db.session))
+admin.add_view(PersonAdmin(Person, db.session))
+admin.add_view(CustomerAdmin(Customer, db.session))
+admin.add_view(AddressAdmin(Address, db.session))
+
 
 db.init_app(app)
 migrate = Migrate(app, db)
