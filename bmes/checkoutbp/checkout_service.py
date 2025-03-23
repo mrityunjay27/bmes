@@ -77,6 +77,10 @@ def process_checkout(request, session):
         db.session.add(customer)
         db.session.commit()
 
+        # Ensure the customer has a valid ID
+        if not customer.id:
+            raise ValueError("Customer ID is missing after saving to the database.")
+
         cart = get_cart(session)
 
         if cart:

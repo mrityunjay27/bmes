@@ -1,13 +1,13 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm  # Import FlaskForm from flask_wtf
 from wtforms import StringField
 from wtforms.validators import Email, DataRequired
 
-class CheckoutForm(Form):
+class CheckoutForm(FlaskForm):  # Inherit from FlaskForm, not Form
     first_name = StringField('first_name', validators=[DataRequired(message='Please enter first name')])
     middle_name = StringField('middle_name')
     last_name = StringField('last_name', validators=[DataRequired(message='Please enter last name')])
     email = StringField("email", validators=[DataRequired(message="Please enter email address."), Email(message="Please enter email address.")])
-    address_line_1 = StringField('address_line_1', validators=[DataRequired(message='Please enter last name')])
+    address_line_1 = StringField('address_line_1', validators=[DataRequired(message='Please enter address line 1')])
     address_line_2 = StringField('address_line_2')
     city = StringField('city', validators=[DataRequired(message='Please enter city')])
     state = StringField('state', validators=[DataRequired(message='Please enter state')])

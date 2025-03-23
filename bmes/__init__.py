@@ -1,4 +1,5 @@
 from flask import Flask, request, session
+from flask_wtf import CSRFProtect
 
 from bmes.cartbp import cart_service
 from bmes.sharedbp import db
@@ -22,6 +23,8 @@ app = Flask(__name__)
 
 # App Secret key
 app.config["SECRET_KEY"] = "secret-key"
+
+csrf = CSRFProtect(app)
 
 # Blueprint registration
 app.register_blueprint(catalogue)
